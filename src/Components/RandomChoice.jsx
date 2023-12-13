@@ -67,7 +67,7 @@ const RandomChoice = () => {
     tag.classList.add("text-white");
     tag.classList.remove("bg-[#f0932b]");
     tag.classList.remove("text-white");
-    
+   
   } 
 
   const unhighlightFunction=(tag)=>{
@@ -75,7 +75,6 @@ const RandomChoice = () => {
     tag.classList.remove("text-white");
     tag.classList.add("bg-[#f0932b]");
     tag.classList.add("text-white");
-
   }
   return (
     <div className="bg-[#2b88f0] mx-auto flex items-center flex-col justify-center h-screen">
@@ -96,7 +95,7 @@ const RandomChoice = () => {
         ></textarea>
        
       </div>
-      <ul className="tags flex flex-wrap w-2/5 gap-6 mt-10 justify-center text-white">
+      <ul className="tags flex flex-wrap w-2/5 gap-6 mt-10 justify-center text-white mb-20">
         {choices.map((choice, index) => {
           return (
             <li
