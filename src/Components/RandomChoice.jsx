@@ -26,7 +26,7 @@ const RandomChoice = () => {
     let int = 300;
   
     const interval = setInterval(() => {
-      const randomChoice = pickRandomLi();
+      const randomChoice = pickRandomly();
   
       if (randomChoice) {
         highlightFunction(randomChoice);
@@ -41,7 +41,7 @@ const RandomChoice = () => {
       clearInterval(interval);
   
       setTimeout(() => {
-        const randomChoice = pickRandomLi();
+        const randomChoice = pickRandomly();
   
         if (randomChoice) {
           highlightFunction(randomChoice);
@@ -50,7 +50,7 @@ const RandomChoice = () => {
     }, int * times);
   };
   
-  const pickRandomLi = () => {
+  const pickRandomly = () => {
     const availableChoices = choicesRef.current.filter((choice) => choice !== null);
     
     if (availableChoices.length === 0) {
