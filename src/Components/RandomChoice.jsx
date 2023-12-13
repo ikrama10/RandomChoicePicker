@@ -3,7 +3,6 @@ import React, { useState,useRef } from 'react'
 const RandomChoice = () => {
   const [randomChoice,setRandomChoice]=useState("");
   const[choices,setChoices]=useState([]);
-  const [highlight, setHighlight] = useState(false);
 
   const choicesRef = useRef([]);
 
@@ -51,8 +50,6 @@ const RandomChoice = () => {
     }, int * times);
   };
   
-  // Assuming pickRandomLi, highlightFunction, and unhighlightFunction are defined elsewhere in your code.
-  
   const pickRandomLi = () => {
     const availableChoices = choicesRef.current.filter((choice) => choice !== null);
     
@@ -68,22 +65,18 @@ const RandomChoice = () => {
 
     tag.classList.add("bg-[#273c75]");
     tag.classList.add("text-white");
-    tag.classList.remove("bg-white");
-    tag.classList.remove("text-gray-900");
+    tag.classList.remove("bg-[#f0932b]");
+    tag.classList.remove("text-white");
     
   } 
 
   const unhighlightFunction=(tag)=>{
     tag.classList.remove("bg-[#273c75]");
     tag.classList.remove("text-white");
-    tag.classList.add("bg-white");
-    tag.classList.add("text-gray-900");
+    tag.classList.add("bg-[#f0932b]");
+    tag.classList.add("text-white");
 
   }
-  
-
-
-
   return (
     <div className="bg-[#2b88f0] mx-auto flex items-center flex-col justify-center h-screen">
       <div className='flex items-center justify-center flex-col'>
@@ -103,14 +96,14 @@ const RandomChoice = () => {
         ></textarea>
        
       </div>
-      <ul className="tags flex flex-wrap w-2/5 gap-6 mt-10 justify-center text-gray-900">
+      <ul className="tags flex flex-wrap w-2/5 gap-6 mt-10 justify-center text-white">
         {choices.map((choice, index) => {
           return (
             <li
               ref={(ele) => (choicesRef.current[index] = ele)}
               key={index}
               className={`
-              px-5 py-2 rounded-xl bg-white text-gray-900 font-semibold shadow-lg capitalize transition-all duration-100`}
+              px-5 py-2 rounded-xl bg-[#f0932b] text-white font-semibold shadow-lg capitalize transition-all duration-100`}
             >
               {choice}
             </li>
